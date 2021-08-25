@@ -30,6 +30,15 @@ module.exports = {
                 test: /\.(scss|css)$/,
                 use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
             },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                loader: 'file-loader',
+                options: {
+                    outputPath: 'images',
+                    publicPath: '../images/'   //<-- assuming assets is in web root
+                },
+            },
+
         ],
     }
 }
